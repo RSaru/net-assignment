@@ -49,212 +49,267 @@ namespace net_assignment
         {
             Console.WriteLine("Car has arrived");
         }
-
+        //Defines the pumps method with the pumpsAvailable string embedded
         public static void pumps(string[] pumpsAvailable)
 
         {
-
+            //prints out all of the pumps with the value of the associated string balue
             Console.WriteLine("Pump 1: " + pumpsAvailable[0] + "        Pump 2: " + pumpsAvailable[1] + "          Pump 3: " + pumpsAvailable[2]);
             Console.WriteLine("Pump 4: " + pumpsAvailable[3] + "        Pump 5: " + pumpsAvailable[4] + "          Pump 6: " + pumpsAvailable[5]);
             Console.WriteLine("Pump 7: " + pumpsAvailable[6] + "        Pump 8: " + pumpsAvailable[7] + "          Pump 9: " + pumpsAvailable[8]);
-            Console.WriteLine("Current Cars: ");
-            
 
         }
 
-
+        //Defines the pumpOne method
         static void pumpOne(string[] closedOne)
         {
+            //Sets the closedOne value to Closed
             closedOne[0] = "Closed";
         }
-
+        //Defines the pumpTwo method
         static void pumpTwo(string[] closedTwo)
         {
+            //Sets the closedTwo value to Closed
             closedTwo[0] = "Closed";
         }
+        //Defines the pumpThree method
         static void pumpThree(string[] closedThree)
         {
+            //Sets the closedThree value to Closed
             closedThree[0] = "Closed";
         }
+        //Defines the pumpFour method
         static void pumpFour(string[] closedFour)
         {
+            //Sets the closedFour value to Closed
             closedFour[0] = "Closed";
         }
+        //Defines the pumpFive method
         static void pumpFive(string[] closedFive)
         {
+            //Sets the closedFive value to Closed
             closedFive[0] = "Closed";
         }
+        //Defines the pumpSix method
         static void pumpSix(string[] closedSix)
         {
+            //Sets the closedSix value to Closed
             closedSix[0] = "Closed";
         }
+        //Defines the pumpSeven method
         static void pumpSeven(string[] closedSeven)
         {
+            //Sets the closedSeven value to Closed
             closedSeven[0] = "Closed";
         }
+        //Defines the pumpEight method
         static void pumpEight(string[] closedEight)
         {
+            //Sets the closedEight value to Closed
             closedEight[0] = "Closed";
         }
+        //Defines the pumpNine method
         static void pumpNine(string[] closedNine)
         {
+            //Sets the closedNine value to Closed
             closedNine[0] = "Closed";
         }
-
+        //Defines the method cars
         static void cars()
         {
+            //Creates an array called carsQueue
             string[] carsQueue = new string[1];
-
+            //A For loop which continues until i is less than carsQueue
             for (int i = 0; i < carsQueue.Length; i++)
             {
+                //This sets carsQueue to the value of 1
                 carsQueue[i] = "1";
+                //This prints the first entry of the carsQueue array
                 Console.WriteLine(carsQueue[0]);
             }
         }
 
-
+        //Defines the pumpQuestion method with the array "arr4" built in
         static void pumpQuestion(string[] arr4)
         {
+            // Defines the variable carSend as an integer
             int carSend;
+            //This sets i to 0
             int i = 0;
+            //This initiates a while loop
             do
             {
+                //This prints to the console and asks the user "Please choose a free pump" and records the input to the variable "carSend"
                 Console.WriteLine("Please choose a free pump");
                 carSend = Convert.ToInt32(Console.ReadLine());
-
+                //If statement which looks for the user to input "1"
                 if (carSend == 1)
                 {
+                    //If statement which looks to see if arr4[0] is set to "open"
                     if (arr4[0] == "open")
                     {
+                        //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 1");
                         arr4[0] = "Closed";
-
+                        //Calls the pumpOne and pumps methods
                         pumpOne(arr4);
                         pumps(arr4);
 
                     }
+                    //If the array value is set to "Closed", it tells the user that the pump is occupied 
                     else if (arr4[0] == "Closed")
                     {
                         Console.WriteLine("That pump is occupied");
 
                     }
                 }
+                //If statement which looks for the user to input "2"
                 if (carSend == 2)
                 {
+                    //If statement which looks to see if arr4[1] is set to "open"
                     if (arr4[1] == "open")
                     {
+                        //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 2");
                         arr4[1] = "Closed";
-
+                        //Calls the pumpTwo and pumps methods
                         pumpTwo(arr4);
                         pumps(arr4);
                     }
+                    //If the array value is set to "Closed", it tells the user that the pump is occupied
                     else
                     {
                         Console.WriteLine("That pump is occupied");
                     }
                 }
+                //If statement which looks for the user to input "3"
                 if (carSend == 3)
                 {
+                    //If statement which looks to see if arr4[2] is set to "open"
                     if (arr4[2] == "open")
                     {
+                        //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 3");
                         arr4[2] = "Closed";
-
+                        //Calls the pumpThree and pumps methods
                         pumpThree(arr4);
                         pumps(arr4);
                     }
+                    //If the array value is set to "Closed", it tells the user that the pump is occupied
                     else
                     {
                         Console.WriteLine("That pump is occupied");
                     }
                 }
+                //If statement which looks for the user to input "4"
                 if (carSend == 4)
                 {
+                    //If statement which looks to see if arr4[3] is set to "open"
                     if (arr4[3] == "open")
                     {
+                        //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 4");
                         arr4[3] = "Closed";
-
+                        //Calls the pumpFour and pumps methods
                         pumpFour(arr4);
                         pumps(arr4);
                     }
+                    //If the array value is set to "Closed", it tells the user that the pump is occupied
                     else
                     {
                         Console.WriteLine("That pump is occupied");
                     }
                 }
+                //If statement which looks for the user to input "5"
                 if (carSend == 5)
                 {
+                    //If statement which looks to see if arr4[4] is set to "open"
                     if (arr4[4] == "open")
                     {
+                        //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 5");
                         arr4[4] = "Closed";
-
+                        //Calls the pumpFive and pumps methods
                         pumpFive(arr4);
                         pumps(arr4);
                     }
+                    //If the array value is set to "Closed", it tells the user that the pump is occupied
                     else
                     {
                         Console.WriteLine("That pump is occupied");
                     }
                 }
+                //If statement which looks for the user to input "6"
                 if (carSend == 6)
                 {
+                    //If statement which looks to see if arr4[5] is set to "open"
                     if (arr4[5] == "open")
                     {
+                        //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 6");
                         arr4[5] = "Closed";
-
+                        //Calls the pumpSix and pumps methods
                         pumpSix(arr4);
                         pumps(arr4);
                     }
+                    //If the array value is set to "Closed", it tells the user that the pump is occupied
                     else
                     {
                         Console.WriteLine("That pump is occupied");
                     }
                 }
+                //If statement which looks for the user to input "7"
                 if (carSend == 7)
                 {
+                    //If statement which looks to see if arr4[6] is set to "open"
                     if (arr4[6] == "open")
                     {
+                        //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 7");
                         arr4[6] = "Closed";
-
+                        //Calls the pumpSeven and pumps methods
                         pumpSeven(arr4);
                         pumps(arr4);
                     }
+                    //If the array value is set to "Closed", it tells the user that the pump is occupied
                     else
                     {
                         Console.WriteLine("That pump is occupied");
                     }
                 }
+                //If statement which looks for the user to input "8"
                 if (carSend == 8)
                 {
+                    //If statement which looks to see if arr4[7] is set to "open"
                     if (arr4[7] == "open")
                     {
+                        //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 8");
                         arr4[7] = "Closed";
-
+                        //Calls the pumpEight and pumps methods
                         pumpEight(arr4);
                         pumps(arr4);
                     }
-
+                    //If the array value is set to "Closed", it tells the user that the pump is occupied
                     else
                     {
                         Console.WriteLine("That pump is occupied");
                     }
                 }
+                //If statement which looks for the user to input "9"
                 if (carSend == 9)
                 {
+                    //If statement which looks to see if arr4[8] is set to "open"
                     if (arr4[8] == "open")
                     {
+                        //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 9");
                         arr4[8] = "Closed";
-
+                        //Calls the pumpNine and pumps methods
                         pumpNine(arr4);
                         pumps(arr4);
                     }
+                    //If the array value is set to "Closed", it tells the user that the pump is occupied
                     else
                     {
                         Console.WriteLine("That pump is occupied");
@@ -267,16 +322,25 @@ namespace net_assignment
 
 
 
-
+        //Lines of code in the Main method will always run, and will run first so they will be at the top of the program when it starts
         static void Main(string[] args)
         {
+            //Creates the pumpsAvailable array and sets all 9 values as "open"
             string[] pumpsAvailable = new string[9] { "open", "open", "open", "open", "open", "open", "open", "open", "open" };
-
+            //Prints an open message
+            Console.WriteLine("*********** Welcome to the Petrol Station ***********");
+            //Prints all of the pumps and their values
+            Console.WriteLine("Pump 1: " + pumpsAvailable[0] + "        Pump 2: " + pumpsAvailable[1] + "          Pump 3: " + pumpsAvailable[2]);
+            Console.WriteLine("Pump 4: " + pumpsAvailable[3] + "        Pump 5: " + pumpsAvailable[4] + "          Pump 6: " + pumpsAvailable[5]);
+            Console.WriteLine("Pump 7: " + pumpsAvailable[6] + "        Pump 8: " + pumpsAvailable[7] + "          Pump 9: " + pumpsAvailable[8]);
+            //Sets i to 0
             int i = 0;
+            //initiates a while loop of the pumpQuestion method
             do
             {
                 pumpQuestion(pumpsAvailable);
             }
+            //Sets the parameters of the while loop
             while (i < 9);
 
             Console.ReadKey();
