@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+
+//Implements timers
 using Timer = System.Timers.Timer;
 
 
@@ -11,10 +14,13 @@ namespace net_assignment
 {
     internal class Program
     {
+        //Defines the timer for cars arriving
         public static Timer carArrival;
 
+        //Defines the Method for cars being generated
         public static void carPullUp()
         {
+            //Sets the amount of time before a new car is made
             carArrival = new Timer(1500);
             carArrival.Elapsed += CarArrival_Elapsed;
             carArrival.AutoReset = true;
@@ -26,10 +32,12 @@ namespace net_assignment
         {
             Console.WriteLine("Car has arrived");
         }
-
+        //Defines the timer for the cars leaving the pump
         public static Timer carLeave;
+        //Defines the method for the cars leaving the pump
         public static void carGo()
         {
+            //Sets the amount of time before a new car is made
             carLeave = new Timer(8000);
             carLeave.Elapsed += carLeave_Elapsed;
             carLeave.AutoReset = false;
