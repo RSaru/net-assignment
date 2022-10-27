@@ -14,6 +14,8 @@ namespace net_assignment
 {
     internal class Program
     {
+        public static string[] pumpsAvailable = new string[9] { "open", "open", "open", "open", "open", "open", "open", "open", "open" };
+        public static int CurrentCar = 0;
         //Defines the timer for cars arriving
         public static Timer carArrival;
 
@@ -35,7 +37,7 @@ namespace net_assignment
         //Defines the timer for the cars leaving the pump
         public static Timer carLeave;
         //Defines the method for the cars leaving the pump
-        public static void carGo()
+        public static void carGo(int i)
         {
             //Sets the amount of time before a new car is made
             carLeave = new Timer(8000);
@@ -43,11 +45,13 @@ namespace net_assignment
             carLeave.AutoReset = false;
             carLeave.Enabled = false;
             carLeave.Start();
+            CurrentCar = i;
         }
 
-        private static void carLeave_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        private static void carLeave_Elapsed(object sender, System.Timers.ElapsedEventArgs e, int pumps)
         {
-            Console.WriteLine("Car has arrived");
+            Console.WriteLine("Car has left");
+            pumpsAvailable[CurrentCar] = "open";
         }
         //Defines the pumps method with the pumpsAvailable string embedded
         public static void pumps(string[] pumpsAvailable)
@@ -151,6 +155,7 @@ namespace net_assignment
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 1");
                         arr4[0] = "Closed";
+                        carGo(0);
                         //Calls the pumpOne and pumps methods
                         pumpOne(arr4);
                         pumps(arr4);
@@ -321,12 +326,12 @@ namespace net_assignment
         }
 
 
-
+       
         //Lines of code in the Main method will always run, and will run first so they will be at the top of the program when it starts
         static void Main(string[] args)
         {
             //Creates the pumpsAvailable array and sets all 9 values as "open"
-            string[] pumpsAvailable = new string[9] { "open", "open", "open", "open", "open", "open", "open", "open", "open" };
+            //string[] pumpsAvailable = new string[9] { "open", "open", "open", "open", "open", "open", "open", "open", "open" };
             //Prints an open message
             Console.WriteLine("*********** Welcome to the Petrol Station ***********");
             //Prints all of the pumps and their values
