@@ -4,11 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 //Implements timers
 using Timer = System.Timers.Timer;
-
-
 
 namespace net_assignment
 {
@@ -41,7 +38,7 @@ namespace net_assignment
         {
             //Sets the amount of time before a new car is made
             carLeave = new Timer(8000);
-            carLeave.Elapsed += carLeave_Elapsed;
+            //carLeave.Elapsed += carLeave_Elapsed;
             carLeave.AutoReset = false;
             carLeave.Enabled = false;
             carLeave.Start();
@@ -155,10 +152,12 @@ namespace net_assignment
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 1");
                         arr4[0] = "Closed";
-                        carGo(0);
+
+                        CarLeaving(arr4);
+
                         //Calls the pumpOne and pumps methods
-                        pumpOne(arr4);
-                        pumps(arr4);
+                        //pumpOne(arr4);
+                        //pumps(arr4);
 
                     }
                     //If the array value is set to "Closed", it tells the user that the pump is occupied 
@@ -177,9 +176,10 @@ namespace net_assignment
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 2");
                         arr4[1] = "Closed";
+                        CarLeaving2(arr4);
                         //Calls the pumpTwo and pumps methods
-                        pumpTwo(arr4);
-                        pumps(arr4);
+                        //pumpTwo(arr4);
+                        //pumps(arr4);
                     }
                     //If the array value is set to "Closed", it tells the user that the pump is occupied
                     else
@@ -196,9 +196,10 @@ namespace net_assignment
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 3");
                         arr4[2] = "Closed";
+                        CarLeaving3(arr4);
                         //Calls the pumpThree and pumps methods
-                        pumpThree(arr4);
-                        pumps(arr4);
+                        //pumpThree(arr4);
+                        //pumps(arr4);
                     }
                     //If the array value is set to "Closed", it tells the user that the pump is occupied
                     else
@@ -215,9 +216,10 @@ namespace net_assignment
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 4");
                         arr4[3] = "Closed";
+                        CarLeaving4(arr4);
                         //Calls the pumpFour and pumps methods
-                        pumpFour(arr4);
-                        pumps(arr4);
+                        //pumpFour(arr4);
+                        //pumps(arr4);
                     }
                     //If the array value is set to "Closed", it tells the user that the pump is occupied
                     else
@@ -234,9 +236,10 @@ namespace net_assignment
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 5");
                         arr4[4] = "Closed";
+                        CarLeaving5(arr4);
                         //Calls the pumpFive and pumps methods
-                        pumpFive(arr4);
-                        pumps(arr4);
+                        //pumpFive(arr4);
+                        //pumps(arr4);
                     }
                     //If the array value is set to "Closed", it tells the user that the pump is occupied
                     else
@@ -253,9 +256,10 @@ namespace net_assignment
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 6");
                         arr4[5] = "Closed";
+                        CarLeaving6(arr4);
                         //Calls the pumpSix and pumps methods
-                        pumpSix(arr4);
-                        pumps(arr4);
+                        //pumpSix(arr4);
+                        //pumps(arr4);
                     }
                     //If the array value is set to "Closed", it tells the user that the pump is occupied
                     else
@@ -272,9 +276,10 @@ namespace net_assignment
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 7");
                         arr4[6] = "Closed";
+                        CarLeaving7(arr4);
                         //Calls the pumpSeven and pumps methods
-                        pumpSeven(arr4);
-                        pumps(arr4);
+                        //pumpSeven(arr4);
+                        //pumps(arr4);
                     }
                     //If the array value is set to "Closed", it tells the user that the pump is occupied
                     else
@@ -291,9 +296,10 @@ namespace net_assignment
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 8");
                         arr4[7] = "Closed";
+                        CarLeaving8(arr4);
                         //Calls the pumpEight and pumps methods
-                        pumpEight(arr4);
-                        pumps(arr4);
+                        //pumpEight(arr4);
+                        //pumps(arr4);
                     }
                     //If the array value is set to "Closed", it tells the user that the pump is occupied
                     else
@@ -310,9 +316,10 @@ namespace net_assignment
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 9");
                         arr4[8] = "Closed";
+                        CarLeaving9(arr4);
                         //Calls the pumpNine and pumps methods
-                        pumpNine(arr4);
-                        pumps(arr4);
+                        //pumpNine(arr4);
+                        //pumps(arr4);
                     }
                     //If the array value is set to "Closed", it tells the user that the pump is occupied
                     else
@@ -350,5 +357,110 @@ namespace net_assignment
 
             Console.ReadKey();
         }
+
+        static async Task CarLeaving(string[] arr4)
+        {
+            await Task.Delay(8000);
+
+            arr4[0] = "open";
+
+            Console.WriteLine("Pump 1 is now free to be used.");
+
+            pumps(arr4);
+
+        }
+
+        static async Task CarLeaving2(string[] arr4)
+        {
+            await Task.Delay(8000);
+
+            arr4[1] = "open";
+
+            Console.WriteLine("Pump 2 is now free to be used.");
+
+            pumps(arr4);
+
+        }
+
+        static async Task CarLeaving3(string[] arr4)
+        {
+            await Task.Delay(8000);
+
+            arr4[2] = "open";
+
+            Console.WriteLine("Pump 3 is now free to be used.");
+
+            pumps(arr4);
+
+        }
+
+        static async Task CarLeaving4(string[] arr4)
+        {
+            await Task.Delay(8000);
+
+            arr4[3] = "open";
+
+            Console.WriteLine("Pump 4 is now free to be used.");
+
+            pumps(arr4);
+
+        }
+        static async Task CarLeaving5(string[] arr4)
+        {
+            await Task.Delay(8000);
+
+            arr4[4] = "open";
+
+            Console.WriteLine("Pump 5 is now free to be used.");
+
+            pumps(arr4);
+
+        }
+        static async Task CarLeaving6(string[] arr4)
+        {
+            await Task.Delay(8000);
+
+            arr4[5] = "open";
+
+            Console.WriteLine("Pump 6 is now free to be used.");
+
+            pumps(arr4);
+
+        }
+        static async Task CarLeaving7(string[] arr4)
+        {
+            await Task.Delay(8000);
+
+            arr4[6] = "open";
+
+            Console.WriteLine("Pump 7 is now free to be used.");
+
+            pumps(arr4);
+
+        }
+        static async Task CarLeaving8(string[] arr4)
+        {
+            await Task.Delay(8000);
+
+            arr4[7] = "open";
+
+            Console.WriteLine("Pump 8 is now free to be used.");
+
+            pumps(arr4);
+
+        }
+        static async Task CarLeaving9(string[] arr4)
+        {
+            await Task.Delay(8000);
+
+            arr4[8] = "open";
+
+            Console.WriteLine("Pump 9 is now free to be used.");
+
+            pumps(arr4);
+
+        }
+
+
     }
 }
