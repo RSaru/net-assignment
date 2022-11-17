@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-//Implements timers
 using Timer = System.Timers.Timer;
+//Implements timers
 
 namespace net_assignment
 {
@@ -395,7 +394,7 @@ namespace net_assignment
             arr4[0] = "open";
 
             Console.WriteLine("Pump 1 is now free to be used.");
-
+            Console.WriteLine("Cars in the queue: "+ Service.carsInQueue);
             pumps(arr4);
 
         }
@@ -407,6 +406,7 @@ namespace net_assignment
             arr4[1] = "open";
 
             Console.WriteLine("Pump 2 is now free to be used.");
+            Console.WriteLine("Cars in the queue: " + Service.carsInQueue);
 
             pumps(arr4);
 
@@ -419,6 +419,7 @@ namespace net_assignment
             arr4[2] = "open";
 
             Console.WriteLine("Pump 3 is now free to be used.");
+            Console.WriteLine("Cars in the queue: " + Service.carsInQueue);
 
             pumps(arr4);
 
@@ -431,6 +432,7 @@ namespace net_assignment
             arr4[3] = "open";
 
             Console.WriteLine("Pump 4 is now free to be used.");
+            Console.WriteLine("Cars in the queue: " + Service.carsInQueue);
 
             pumps(arr4);
 
@@ -442,6 +444,7 @@ namespace net_assignment
             arr4[4] = "open";
 
             Console.WriteLine("Pump 5 is now free to be used.");
+            Console.WriteLine("Cars in the queue: " + Service.carsInQueue);
 
             pumps(arr4);
 
@@ -453,6 +456,7 @@ namespace net_assignment
             arr4[5] = "open";
 
             Console.WriteLine("Pump 6 is now free to be used.");
+            Console.WriteLine("Cars in the queue: " + Service.carsInQueue);
 
             pumps(arr4);
 
@@ -464,6 +468,7 @@ namespace net_assignment
             arr4[6] = "open";
 
             Console.WriteLine("Pump 7 is now free to be used.");
+            Console.WriteLine("Cars in the queue: " + Service.carsInQueue);
 
             pumps(arr4);
 
@@ -475,6 +480,7 @@ namespace net_assignment
             arr4[7] = "open";
 
             Console.WriteLine("Pump 8 is now free to be used.");
+            Console.WriteLine("Cars in the queue: " + Service.carsInQueue);
 
             pumps(arr4);
 
@@ -486,9 +492,44 @@ namespace net_assignment
             arr4[8] = "open";
 
             Console.WriteLine("Pump 9 is now free to be used.");
+            Console.WriteLine("Cars in the queue: " + Service.carsInQueue);
 
             pumps(arr4);
 
+        }
+        public static Timer carQueueAdd;
+        public static void carQueueAddMethod(bool state)
+        {
+
+
+
+            carQueueAdd = new Timer(1500);
+            carQueueAdd.Elapsed += carQueueAdd_Elapsed;
+            carQueueAdd.Enabled = false;
+            carQueueAdd.AutoReset = false;
+
+
+            //this is currently broken, the timer doesn't stop whenever the user enters a number between 1 and 9
+            if (state == true)
+            {
+                carQueueAdd.Start();
+
+            }
+            else if (state == false)
+            {
+                carQueueAdd.Stop();
+
+            }
+
+
+
+        }
+
+
+
+        private static void carQueueAddMethod_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            
         }
 
 

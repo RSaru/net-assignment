@@ -18,10 +18,14 @@ namespace net_assignment
 
         static async Task CarArriving()
         {
-            await Task.Delay(1500);
+            int i = 0;
+            do
+            {
+                await Task.Delay(1500);
 
-            carsInQueue++;
-
+                carsInQueue++;
+            }
+            while (i < 5);
         }
 
 
