@@ -55,9 +55,11 @@ namespace net_assignment
 
         {
             //prints out all of the pumps with the value of the associated string balue
+            Console.WriteLine("-----------------------------------------------------------------------------------------------------------------");
             Console.WriteLine("Pump 1: " + pumpsAvailable[0] + "        Pump 2: " + pumpsAvailable[1] + "          Pump 3: " + pumpsAvailable[2]);
             Console.WriteLine("Pump 4: " + pumpsAvailable[3] + "        Pump 5: " + pumpsAvailable[4] + "          Pump 6: " + pumpsAvailable[5]);
             Console.WriteLine("Pump 7: " + pumpsAvailable[6] + "        Pump 8: " + pumpsAvailable[7] + "          Pump 9: " + pumpsAvailable[8]);
+            Console.WriteLine("-----------------------------------------------------------------------------------------------------------------");
 
         }
 
@@ -141,7 +143,8 @@ namespace net_assignment
             do
             {
                 //This prints to the console and asks the user "Please choose a free pump" and records the input to the variable "carSend"
-                Console.WriteLine("Please choose a free pump");
+                Console.WriteLine("Please enter the number of a free pump, or enter 10 to end and display recorded values");
+                Console.WriteLine("Cars in queue: 1");
                 carSend = Convert.ToInt32(Console.ReadLine());
                 //If statement which looks for the user to input "1"
                 if (carSend == 1)
@@ -151,6 +154,7 @@ namespace net_assignment
                     {
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 1");
+                        Service.carsServiced++;
                         arr4[0] = "Closed";
 
                         CarLeaving(arr4);
@@ -175,6 +179,7 @@ namespace net_assignment
                     {
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 2");
+                        Service.carsServiced++;
                         arr4[1] = "Closed";
                         CarLeaving2(arr4);
                         //Calls the pumpTwo and pumps methods
@@ -195,6 +200,7 @@ namespace net_assignment
                     {
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 3");
+                        Service.carsServiced++;
                         arr4[2] = "Closed";
                         CarLeaving3(arr4);
                         //Calls the pumpThree and pumps methods
@@ -215,6 +221,7 @@ namespace net_assignment
                     {
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 4");
+                        Service.carsServiced++;
                         arr4[3] = "Closed";
                         CarLeaving4(arr4);
                         //Calls the pumpFour and pumps methods
@@ -235,6 +242,7 @@ namespace net_assignment
                     {
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 5");
+                        Service.carsServiced++;
                         arr4[4] = "Closed";
                         CarLeaving5(arr4);
                         //Calls the pumpFive and pumps methods
@@ -255,6 +263,7 @@ namespace net_assignment
                     {
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 6");
+                        Service.carsServiced++;
                         arr4[5] = "Closed";
                         CarLeaving6(arr4);
                         //Calls the pumpSix and pumps methods
@@ -275,6 +284,7 @@ namespace net_assignment
                     {
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 7");
+                        Service.carsServiced++;
                         arr4[6] = "Closed";
                         CarLeaving7(arr4);
                         //Calls the pumpSeven and pumps methods
@@ -295,6 +305,7 @@ namespace net_assignment
                     {
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 8");
+                        Service.carsServiced++;
                         arr4[7] = "Closed";
                         CarLeaving8(arr4);
                         //Calls the pumpEight and pumps methods
@@ -315,6 +326,7 @@ namespace net_assignment
                     {
                         //Tells the user where the car has been sent to and also sets the corresponding pump value to "Closed"
                         Console.WriteLine("The car has been sent to pump 9");
+                        Service.carsServiced++;
                         arr4[8] = "Closed";
                         CarLeaving9(arr4);
                         //Calls the pumpNine and pumps methods
@@ -327,8 +339,26 @@ namespace net_assignment
                         Console.WriteLine("That pump is occupied");
                     }
                 }
+                if (carSend == 10)
+                {
+                    int dieselUsed;
+                    dieselUsed = Service.carsServiced * 12;
+
+                    int fuelCost;
+                    fuelCost = 5;
+
+                    int overallCost;
+                    overallCost = dieselUsed * 5;
+                    Console.WriteLine("Diesel: " + dieselUsed);
+                    Console.WriteLine("Cost £"+ overallCost);
+                    Console.WriteLine("1% = £"+ overallCost/100);
+                    Console.WriteLine("Number of cars serviced: " + Service.carsServiced);
+                    Console.WriteLine("Number of cars left early: " + Service.carsLeft);
+
+                }
             }
             while (i < 5);
+
 
         }
 
